@@ -1,5 +1,7 @@
 import { MetadataRoute } from "next";
 
+const siteUrl = "https://www.steelsrack.com";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -20,7 +22,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       }
     ],
-    sitemap: "https://www.steelrack.co/sitemap.xml",
-    host: "https://www.steelrack.co",
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
   };
 }

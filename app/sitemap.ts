@@ -1,18 +1,24 @@
 import { MetadataRoute } from "next";
 
+const siteUrl = "https://www.steelsrack.com";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const imageUrls = Array.from({ length: 87 }, (_, index) =>
-    `https://www.steelrack.co/media/image-${String(index + 1).padStart(3, "0")}.webp`
+    `${siteUrl}/media/image-${String(index + 1).padStart(3, "0")}.webp`
   );
 
   return [
     {
-      url: "https://www.steelrack.co/",
+      url: `${siteUrl}/`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1.0,
       images: [
-        "https://www.steelrack.co/hero-attractive.png",
+        `${siteUrl}/hero-attractive.png`,
+        `${siteUrl}/al-najim-logo-horizontal.webp`,
+        `${siteUrl}/media/service-shearing.webp`,
+        `${siteUrl}/media/service-bending.webp`,
+        `${siteUrl}/media/service-lasering-notching.webp`,
         ...imageUrls,
       ],
     },
