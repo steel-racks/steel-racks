@@ -7,6 +7,11 @@ import ScrollToTop from "../components/ScrollToTop";
 import Preloader from "../components/Preloader";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 
+const siteUrl = "https://www.steelsrack.com";
+const businessName = "Al Najim Al Satie Steel Shelfs Trdg";
+const siteDescription =
+  "Al Najim Al Satie Steel Shelfs Trdg supplies pallet racks, heavy-duty racks, shelving, mezzanine flooring and steel fabrication for warehouses and businesses in Sharjah, UAE.";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -18,31 +23,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.steelrack.co"),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Al Najim Al Satie Steel Shelfs Trdg | A Complete Storage Solution",
-    template: "%s | Al Najim Al Satie Steel Shelfs Trdg",
+    default: "Al Najim Steel Shelves | Warehouse Racks in Sharjah",
+    template: "%s | Al Najim Steel Shelves",
   },
-  description: "A leading manufacturer and integrator of material handling products and systems for manufacturing, assembly, distribution centres, warehousing and storage facilities.",
-  applicationName: "Al Najim Al Satie Steel Shelfs Trdg",
+  description: siteDescription,
+  applicationName: businessName,
   category: "industrial storage and material handling",
   classification: "Warehouse racking, shelving and steel fabrication",
-  authors: [{ name: "Al Najim Al Satie Steel Shelfs Trdg" }],
-  creator: "Al Najim Al Satie Steel Shelfs Trdg",
-  publisher: "Al Najim Al Satie Steel Shelfs Trdg",
+  authors: [{ name: businessName }],
+  creator: businessName,
+  publisher: businessName,
   keywords: [
     "Al Najim Al Satie",
-    "Steel Shelfs Trading",
-    "Steel Shelves Trading Sharjah",
-    "Pallet Racks",
-    "Heavy Duty Racks",
-    "Supermarket Shelving",
-    "Material Handling",
-    "Warehouse Storage",
-    "Sharjah UAE",
-    "Steel Fabrication Sharjah",
-    "Aluminium Fabrication Sharjah",
-    "Car Parking Sheds Sharjah",
+    "steel shelves trading Sharjah",
+    "warehouse racking Sharjah",
+    "warehouse shelving UAE",
+    "pallet racks",
+    "heavy duty racks",
+    "supermarket shelving",
+    "material handling systems",
+    "mezzanine flooring Sharjah",
+    "steel fabrication Sharjah",
+    "aluminium fabrication Sharjah",
+    "car parking sheds Sharjah",
   ],
   robots: {
     index: true,
@@ -56,13 +61,13 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Al Najim Al Satie Steel Shelfs Trdg",
-    description: "A Complete Storage Solution for material handling, warehousing and storage facilities.",
-    url: "https://www.steelrack.co/",
-    siteName: "Al Najim Al Satie Steel Shelfs Trdg",
+    title: "Al Najim Steel Shelves | Warehouse Racks in Sharjah",
+    description: siteDescription,
+    url: `${siteUrl}/`,
+    siteName: businessName,
     images: [
       {
-        url: "/hero-attractive.png",
+        url: `${siteUrl}/hero-attractive.png`,
         width: 2048,
         height: 768,
         alt: "Modern warehouse pallet racking and storage systems",
@@ -73,12 +78,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Al Najim Al Satie Steel Shelfs Trdg",
-    description: "A Complete Storage Solution for material handling, warehousing and storage facilities.",
-    images: ["/hero-attractive.png"],
+    title: "Al Najim Steel Shelves | Warehouse Racks in Sharjah",
+    description: siteDescription,
+    images: [`${siteUrl}/hero-attractive.png`],
   },
   alternates: {
-    canonical: "https://www.steelrack.co/",
+    canonical: `${siteUrl}/`,
   },
   other: {
     "geo.region": "AE-SH",
@@ -93,16 +98,16 @@ const jsonLd = {
   "@graph": [
     {
       "@type": ["Organization", "LocalBusiness"],
-      "@id": "https://www.steelrack.co/#business",
-      name: "Al Najim Al Satie Steel Shelfs Trdg",
+      "@id": `${siteUrl}/#business`,
+      name: businessName,
       alternateName: "Al Najim Al Satie Trading",
-      description: "A leading manufacturer and integrator of material handling products and systems for manufacturing, assembly, distribution centres, warehousing and storage facilities.",
+      description: siteDescription,
       image: [
-        "https://www.steelrack.co/hero-attractive.png",
-        "https://www.steelrack.co/al-najim-logo.png",
+        `${siteUrl}/hero-attractive.png`,
+        `${siteUrl}/al-najim-logo.png`,
       ],
-      logo: "https://www.steelrack.co/al-najim-logo.png",
-      url: "https://www.steelrack.co/",
+      logo: `${siteUrl}/al-najim-logo.png`,
+      url: `${siteUrl}/`,
       telephone: ["+971507146645", "+971558219504"],
       email: ["najimsatiracks@gmail.com", "john.alnajim@gmail.com"],
       address: {
@@ -124,6 +129,30 @@ const jsonLd = {
         { "@type": "Country", name: "United Arab Emirates" },
       ],
       sameAs: ["https://www.linkedin.com/company/alnajimalsatie/"],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Warehouse racking, storage and fabrication services",
+        itemListElement: [
+          "Pallet racks",
+          "Heavy duty racks",
+          "Supermarket shelving and storage systems",
+          "Slotted angle shelves",
+          "Mezzanine flooring with rack support",
+          "Aluminium fabrication",
+          "Structural fabrication",
+          "MS stainless steel fabrication",
+          "Car parking sheds",
+          "Fence cabana with wooden bench",
+          "Retractable shades",
+          "Interior decor",
+          "Shearing",
+          "Bending",
+          "Lasering and notching",
+        ].map((name) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name },
+        })),
+      },
       knowsAbout: [
         "Pallet racks",
         "Heavy duty racks",
@@ -139,10 +168,20 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.steelrack.co/#website",
-      url: "https://www.steelrack.co/",
-      name: "Al Najim Al Satie Steel Shelfs Trdg",
-      publisher: { "@id": "https://www.steelrack.co/#business" },
+      "@id": `${siteUrl}/#website`,
+      url: `${siteUrl}/`,
+      name: businessName,
+      publisher: { "@id": `${siteUrl}/#business` },
+      inLanguage: "en-AE",
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/#webpage`,
+      url: `${siteUrl}/`,
+      name: "Warehouse Racks and Steel Fabrication in Sharjah",
+      description: siteDescription,
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      about: { "@id": `${siteUrl}/#business` },
       inLanguage: "en-AE",
     },
   ],
