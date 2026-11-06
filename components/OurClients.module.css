@@ -1,0 +1,47 @@
+.industryGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.industryCard {
+  min-height: 220px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  background: linear-gradient(145deg, rgba(48, 42, 27, 0.82), rgba(20, 19, 15, 0.88));
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.industryCard:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+}
+
+.industryTitle {
+  margin: 0 0 0.75rem;
+  color: var(--foreground);
+  font-size: 1.25rem;
+}
+
+.industryDescription {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+  .industryGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .industryGrid {
+    grid-template-columns: 1fr;
+  }
+}

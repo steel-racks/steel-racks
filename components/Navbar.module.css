@@ -1,0 +1,154 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  z-index: 50;
+  background: rgba(20, 19, 15, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(240, 211, 155, 0.18);
+}
+
+.navContainer {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 2rem;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.brandLogo {
+  display: block;
+  width: auto;
+  height: 56px;
+  max-width: min(190px, 24vw);
+  object-fit: contain;
+  filter: drop-shadow(0 0 1.5px rgba(240, 211, 155, 0.7));
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto;
+}
+
+.navLink {
+  color: var(--foreground);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+.mobileToggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0;
+  border: 1px solid rgba(240, 211, 155, 0.2);
+  border-radius: 0.65rem;
+  background: rgba(240, 211, 155, 0.08);
+  color: var(--foreground);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.mobileToggle:hover {
+  background: rgba(240, 211, 155, 0.14);
+  border-color: rgba(240, 211, 155, 0.3);
+}
+
+.toggleBar {
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.mobileToggleOpen .toggleBar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobileToggleOpen .toggleBar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileToggleOpen .toggleBar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobileToggle:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .navContainer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 0.75rem;
+    padding: 0;
+    width: 100%;
+  }
+
+  .brandLogo {
+    height: 44px;
+    max-width: calc(100vw - 88px);
+  }
+
+  .mobileToggle {
+    display: flex;
+    justify-self: end;
+    flex: 0 0 44px;
+  }
+
+  .navLinks {
+    display: none;
+    grid-column: 1 / -1;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    margin-left: 0;
+  }
+
+  .navLinksOpen {
+    display: flex;
+    padding: 1.25rem 0 0.5rem;
+    border-top: 1px solid rgba(240, 211, 155, 0.18);
+  }
+}
